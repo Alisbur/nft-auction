@@ -37,34 +37,34 @@
 
 ## Запуск проекта локально
 1. Клонировать репозиторий:  
-    git clone https://github.com/Alisbur/nft-auction.git
-    cd nft-auction
+- git clone https://github.com/Alisbur/nft-auction.git
+- cd nft-auction
 2. Установить зависимости:
-    npm install
+- npm install
 3. Добавить .env файл с URL API
-    переименовать env.template в .env.local
+- переименовать env.template в .env.local
 4. Запустить в режиме разработки: 
-    npm run dev
+- npm run dev
 5. Для production сборки:
-    npm run build
-    npm start
+- npm run build
+- npm start
 
 ## Запуск проекта в Docker
 1. Сборка образа:
-    docker build -t nft-auction .
+- docker build -t nft-auction .
 2. Запуск контейнера:
-    docker run -p 3000:3000 nft-auction
+- docker run -p 3000:3000 nft-auction
 3. Доступ к приложению:
-    http://localhost:3000
+- http://localhost:3000
     
 ---
 
 # Структура репозитория
 
-- **app/** или **pages/** — страницы Next.js + Стор Redux
+- **app/** — страницы Next.js + Стор Redux
 - **widgets/** — переиспользуемые виджеты
 - **entities/** — бизнес-логика и API-хуки  
-- **shared/** — общие UI-компоненты и утилиты  
+- **shared/** — общие UI-компоненты и утилиты
 - **features/** — моки FSD-фич
 - **styles/** — глобальные и модульные SCSS стили  
 - **Dockerfile** — для сборки и запуска контейнера  

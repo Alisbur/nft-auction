@@ -1,0 +1,11 @@
+@use "@styles/" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: $font-inter, sans-serif;
+  position: relative;
+}

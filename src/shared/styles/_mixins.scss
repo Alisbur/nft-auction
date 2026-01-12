@@ -1,0 +1,73 @@
+@use "@styles/variables" as *;
+
+@mixin setFont(
+  $fs: null,
+  $color: null,
+  $fw: null,
+  $lh: null,
+  $ls: null,
+  $ff: null
+) {
+  @if $fs {
+    font-size: $fs;
+  }
+
+  @if $color {
+    color: $color;
+  }
+
+  @if $fw {
+    font-weight: $fw;
+  }
+
+  @if $lh {
+    line-height: $lh;
+  }
+
+  @if $ls {
+    letter-spacing: $ls;
+  }
+
+  @if $ff {
+    font-family: $ff, 'Times New Roman', 'Arial', Helvetica, sans-serif;
+  }
+}
+
+@mixin preserveInlinePadding() {
+  box-sizing: border-box;
+  padding-inline: $screen-xs-inline-padding;
+  max-width: $content-max-width;
+
+  @media (min-width: $screen-s) {
+    padding-inline: $screen-s-inline-padding;
+  }
+
+  @media (min-width: $screen-m) {
+    padding-inline: $screen-m-inline-padding;
+  }
+
+  @media (min-width: $screen-l) {
+    padding-inline: $screen-l-inline-padding;
+  }
+}
+
+@mixin hideAbove($width) {
+  @media (min-width: calc($width + 1px)) {
+    display: none;
+  }
+}
+
+@mixin hideBelow($width) {
+  @media (max-width: $width) {
+    display: none;
+  }
+}
+
+@mixin applyLinkHoverOpacity() {
+  text-decoration: none;
+  transition: opacity $link-hover-transition-duration;
+
+  &:hover {
+    opacity: $link-hover-opacity;
+  }
+}

@@ -1,0 +1,16 @@
+@use "@styles/" as *;
+
+.divider {
+  height: 1px;
+  width: 100%;
+  border-bottom: 1px solid $divider-color-on-white;
+  display: inline-block;
+
+  &_dark {
+    border-bottom: 1px solid $divider-color-on-dark;
+  }
+
+  &_fullWidth {
+    display: block;
+  }
+}

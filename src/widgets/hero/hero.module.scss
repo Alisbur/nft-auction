@@ -1,0 +1,311 @@
+@use "@styles/" as *;
+
+.wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 66px;
+  padding-bottom: 119px;
+  overflow: hidden;
+
+  @media (min-width: $screen-s) {
+    padding-top: 41px;
+    padding-bottom: 114px;
+  }
+
+  @media (min-width: $screen-m) {
+    padding-top: 73px;
+    padding-bottom: 95px;
+  }
+
+  @media (min-width: $screen-l) {
+    padding-bottom: 155px;
+  }
+}
+
+.content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $content-max-width;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 105px;
+  @include preserveInlinePadding();
+
+  @media (min-width: $screen-s) {
+    flex-direction: row;
+    column-gap: 90px;
+  }
+
+  @media (min-width: $screen-l) {
+    column-gap: 49px;
+  }
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 8px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+    @include setFont(
+      $color: $secondary-text-color,
+      $fs: $fs-10,
+      $lh: $lh-12,
+      $fw: 600,
+      $ls: 0.01,
+      $ff: $font-poppins
+    );
+
+    & > div {
+      display: inline-block;
+      width: 33px;
+    }
+  }
+
+  @media (min-width: $screen-s) {
+    min-width: 350px;
+
+    align-items: flex-start;
+
+    &__top > span {
+      display: none;
+    }
+
+    &__top > div {
+      width: 138px;
+    }
+  }
+
+  @media (min-width: $screen-l) {
+    row-gap: 12px;
+    margin-top: 10px;
+    min-width: 567px;
+  }
+}
+
+.textContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 16px;
+
+  &__title {
+    text-align: center;
+    @include setFont(
+      $color: $primary-text-color,
+      $fs: $fs-48,
+      $lh: $lh-54,
+      $fw: 600,
+      $ls: -2px,
+      $ff: $font-poppins
+    );
+  }
+
+  &__text {
+    text-align: center;
+    @include setFont(
+      $color: $secondary-text-color,
+      $fs: $fs-11,
+      $lh: $lh-18,
+      $fw: 400,
+      $ls: 0,
+      $ff: $font-poppins
+    );
+
+    & > span {
+      @include setFont($color: $secondary-text-accent-color, $fw: 600);
+    }
+  }
+
+  @media (min-width: $screen-s) {
+    align-items: flex-start;
+
+    &__title {
+      text-align: left;
+      @include setFont($fs: $fs-54, $lh: $lh-62);
+    }
+    &__text {
+      text-align: left;
+      //FONT-SIZE 13!
+      @include setFont($fs: $fs-12, $lh: $lh-18);
+    }
+  }
+
+  @media (min-width: $screen-l) {
+    row-gap: 30px;
+    &__title {
+      @include setFont($fs: $fs-76, $lh: $lh-84, $ls: -3%);
+    }
+    &__text {
+      @include setFont($fs: $fs-18, $lh: $lh-28);
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 17px;
+  margin-top: 33px;
+
+  @media (min-width: $screen-s) {
+    align-items: flex-start;
+    margin-top: 28px;
+  }
+}
+
+.promo {
+  min-width: 400px;
+  min-height: 290px;
+  position: relative;
+
+  background-image: url("/images/dots.svg");
+  background-position: 300px 0;
+  background-size: 93px;
+  background-repeat: no-repeat;
+
+  @media (min-width: $screen-xs) {
+    min-width: 555px;
+    min-height: 390px;
+    background-position: 430px 0;
+    background-size: 123px;
+  }
+
+  @media (min-width: $screen-m) {
+    min-height: 390px;
+  }
+
+  @media (min-width: $screen-l) {
+    min-width: 780px;
+    background-position: 607px 0;
+    background-size: 173px;
+    min-height: 543px;
+  }
+}
+
+.imgContainer {
+  &_big {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 210px;
+    height: 210px;
+    border-radius: 14px;
+    z-index: 5;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 13px;
+      opacity: 0.7;
+      background-image: url("/images/img1.png");
+      background-position: center;
+      background-size: cover;
+      border-radius: 6px;
+      filter: blur(10px);
+    }
+  }
+
+  &_small {
+    position: absolute;
+    left: 229px;
+    top: 107px;
+    width: 170px;
+    height: 170px;
+    border-radius: 14px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 13px;
+
+      background-image: url("/images/img1.png");
+      background-position: center;
+      background-size: cover;
+      border-radius: 6px;
+      filter: blur(10px);
+    }
+  }
+
+  &_arrow {
+    position: absolute;
+    left: 218px;
+    top: 40px;
+    width: 59px;
+    height: 57px;
+  }
+
+  @media (min-width: $screen-xs) {
+    &_big {
+      top: 10px;
+      width: 280px;
+      height: 280px;
+    }
+
+    &_small {
+      top: 135px;
+      left: 306px;
+      width: 230px;
+      height: 230px;
+    }
+
+    &_arrow {
+      left: 293px;
+      top: 40px;
+      width: 91px;
+      height: 91px;
+    }
+  }
+
+  @media (min-width: $screen-l) {
+    &_big {
+      top: 19px;
+      width: 395px;
+      height: 395px;
+    }
+
+    &_small {
+      top: 200px;
+      left: 431px;
+      width: 320px;
+      height: 320px;
+    }
+
+    &_arrow {
+      left: 413px;
+      top: 60px;
+      width: 125px;
+      height: 125px;
+    }
+  }
+}
+
+.data {
+  display: none;
+
+  @media (min-width: $screen-s) {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  @media (min-width: $screen-l) {
+    margin-top: 70px;
+    gap: 60px;
+  }
+}

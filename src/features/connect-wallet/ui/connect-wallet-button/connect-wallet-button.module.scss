@@ -1,0 +1,8 @@
+@use "@styles/" as *;
+
+.button {
+  &_fullWidth {
+    display: block;
+    width: 100%;
+  }
+}

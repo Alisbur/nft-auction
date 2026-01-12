@@ -1,0 +1,42 @@
+@use "@styles/" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  width: fit-content;
+
+  & > p {
+    @include setFont(
+      $fs: $fs-26,
+      $lh: $lh-30,
+      $fw: 600,
+      $ls: 0,
+      $ff: $font-public-sans,
+      $color: $primary-text-color
+    );
+    text-transform: uppercase;
+  }
+
+  & > h6 {
+    @include setFont(
+      $fs: $fs-9,
+      $lh: $lh-13,
+      $fw: 500,
+      $ls: 0,
+      $ff: $font-inter,
+      $color: $gray-text-color
+    );
+  }
+
+  @media (min-width: $screen-l) {
+    & > p {
+      @include setFont($fs: $fs-36, $lh: $lh-42);
+      text-transform: uppercase;
+    }
+
+    & > h6 {
+      @include setFont($fs: $fs-12, $lh: $lh-16);
+    }
+  }
+}

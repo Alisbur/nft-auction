@@ -1,0 +1,81 @@
+//Fonts
+$font-inter: "Inter";
+$font-poppins: "Poppins";
+$font-public-sans: "Public Sans";
+$font-outfit: "Outfit";
+
+//Screens
+$screen-xs: 500px;
+$screen-s: 800px;
+$screen-m: 1000px;
+$screen-l: 1400px;
+$screen-xl: 1900px;
+
+$screen-xs-inline-padding: 30px;
+$screen-s-inline-padding: 45px;
+$screen-m-inline-padding: 67px;
+$screen-l-inline-padding: 97px;
+
+$content-max-width: 1440px;
+$slider-max-width: 1920px;
+$page-max-width: 1920px;
+
+//Z-index
+$z-index-header: 1000;
+$z-index-drawer: 600;
+$z-index-backdrop: 500;
+
+//Components variables
+$wallet-button-radius: 16px;
+$button-radius: 12px;
+$button-border-thikness: 2px;
+$card-radius: 24px;
+$card-image-radius: 24px;
+$timer-radius: 10px;
+
+$link-hover-opacity: 0.7;
+$link-hover-transition-duration: 0.3s;
+
+$fs-76: 76px;
+$fs-54: 54px;
+$fs-48: 48px;
+$fs-46: 46px;
+$fs-45: 45px;
+$fs-40: 40px;
+$fs-30: 30px;
+$fs-36: 36px;
+$fs-34: 34px;
+$fs-32: 32px;
+$fs-26: 26px;
+$fs-24: 24px;
+$fs-22: 22px;
+$fs-20: 20px;
+$fs-18: 18px;
+$fs-16: 16px;
+$fs-15: 15px;
+$fs-14: 14px;
+$fs-13: 13px;
+$fs-12: 12px;
+$fs-11: 11px;
+$fs-10: 10px;
+$fs-9: 9px;
+
+$lh-84: 84px;
+$lh-62: 62px;
+$lh-54: 54px;
+$lh-48: 48px;
+$lh-42: 42px;
+$lh-36: 36px;
+$lh-30: 30px;
+$lh-28: 28px;
+$lh-26: 26px;
+$lh-24: 24px;
+$lh-22: 22px;
+$lh-20: 20px;
+$lh-19: 19px;
+$lh-18: 18px;
+$lh-16: 16px;
+$lh-14: 14px;
+$lh-13: 13px;
+$lh-12: 12px;
+$lh-11: 11px;

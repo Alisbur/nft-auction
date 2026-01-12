@@ -1,0 +1,68 @@
+@use "@styles/" as *;
+
+.wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: $secondary-background;
+  padding-top: 50px;
+  overflow: hidden;
+  position: relative;
+
+  @media (min-width: $screen-l) {
+    padding-top: 70px;
+    padding-bottom: 20px;
+  }
+}
+
+.content {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: $slider-max-width;
+  overflow: hidden;
+
+  & > h2 {
+    @include setFont(
+      $fs: $fs-30,
+      $lh: $lh-30,
+      $fw: 600,
+      $ff: $font-poppins,
+      $color: $secondary-text-color
+    );
+  }
+
+  @media (min-width: $screen-s) {
+    & > h2 {
+      @include setFont($fs: $fs-32, $lh: $lh-36);
+    }
+  }
+
+  @media (min-width: $screen-l) {
+    // row-gap: 70px;
+    row-gap: 20px;
+
+    & > h2 {
+      @include setFont($fs: $fs-46, $lh: $lh-48);
+    }
+  }
+}
+
+.service {
+  width: 100%;
+  min-height: 70px;
+  display: grid;
+  place-content: center;
+  color: $secondary-text-color;
+
+  & > p {
+    @include setFont(
+      $fs: $fs-20,
+      $lh: $lh-26,
+      $fw: 500,
+      $ff: $font-poppins,
+      $color: $secondary-text-color
+    );
+  }
+}

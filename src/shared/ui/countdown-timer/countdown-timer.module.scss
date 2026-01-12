@@ -1,0 +1,27 @@
+@use "@styles/" as *;
+
+.timer {
+  padding: 7px 10px;
+  border-radius: 7.5px;
+  background-color: #1c1d2059;
+  border: 0.88px solid #1c1d2014;
+  backdrop-filter: blur(3.5px);
+  box-shadow: 0px 3.53px 10.59px 0px #1c1d2014;
+
+  @include setFont(
+    $fs: $fs-11,
+    $lh: $lh-11,
+    $fw: 500,
+    $ff: $font-poppins,
+    $color: $text-white
+  );
+
+  @media (min-width: $screen-l) {
+    border: 1.18px solid #1c1d2014;
+    backdrop-filter: blur(4.7px);
+    box-shadow: 0px 4.71px 14.12px 0px #1c1d2014;
+    padding: 10px;
+
+    @include setFont($fs: $fs-14, $lh: $lh-14);
+  }
+}

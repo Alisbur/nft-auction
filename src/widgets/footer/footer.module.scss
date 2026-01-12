@@ -1,0 +1,219 @@
+@use "@styles/" as *;
+
+.footer {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: $footer-background-color;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 52px;
+  padding-bottom: 40px;
+  row-gap: 20px;
+  max-width: $content-max-width;
+  @include preserveInlinePadding();
+  display: grid;
+  grid-template-columns: fit-content 1fr;
+  grid-template-areas:
+    "logo socials"
+    "links links"
+    "divider divider"
+    "copyright copyright";
+
+  @media (min-width: $screen-m) {
+    row-gap: 15px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    grid-template-areas:
+      "logo links"
+      "divider divider"
+      "copyright socials";
+  }
+
+  @media (min-width: $screen-l) {
+    row-gap: 20px;
+    padding-top: 88px;
+    padding-bottom: 100px;
+  }
+}
+
+.divider {
+  grid-area: divider;
+  margin: 28px 0 6px 0;
+
+  @media (min-width: $screen-s) {
+    margin: 1px 0 20px 0;
+  }
+
+  @media (min-width: $screen-m) {
+    margin: 5px 0 26px 0;
+  }
+
+  @media (min-width: $screen-l) {
+    margin-bottom: 40px;
+  }  
+}
+
+.logo {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  color: $footer-logo-color;
+  gap: 10px;
+  @include applyLinkHoverOpacity();
+
+  &__ico {
+    width: 46px;
+    height: 46px;
+
+    @media (min-width: $screen-l) {
+      width: 65px;
+      height: 65px;
+    }
+  }
+
+  &__company {
+    @include setFont(
+      $color: $footer-logo-color,
+      $fs: $fs-22,
+      $lh: $lh-24,
+      $fw: 600,
+      $ls: 0,
+      $ff: $font-poppins
+    );
+    margin: 0;
+
+    @media (min-width: $screen-l) {
+      @include setFont($fs: $fs-30, $lh: 1.3);
+    }
+  }
+}
+
+.links {
+  grid-area: links;
+  place-content: end;
+  align-self: center;
+  list-style: none;
+  margin-top: 12px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  align-items: flex-start;
+
+  @media (min-width: $screen-m) {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 50px;
+    margin-top: 0;
+  }
+
+  @media (min-width: $screen-l) {
+    column-gap: 70px;
+  }
+
+  &__item {
+    @include setFont(
+      $color: $footer-links-color,
+      $fs: $fs-14,
+      $lh: $lh-18,
+      $fw: 500,
+      $ff: $font-inter
+    );
+    text-transform: uppercase;
+    @include applyLinkHoverOpacity();
+
+    @media (min-width: $screen-s) {
+      text-transform: none;
+      @include setFont($fs: $fs-13, $lh: $lh-19);
+    }
+
+    @media (min-width: $screen-l) {
+      @include setFont($fs: $fs-18, $lh: $lh-26);
+    }
+  }
+}
+
+.socials {
+  grid-area: socials;
+  place-content: end;
+  align-content: center;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  color: $social-color;
+
+  @media (min-width: $screen-s) {
+    column-gap: 28px;
+  }
+
+  @media (min-width: $screen-l) {
+    column-gap: 40px;
+  }
+
+  > li:last-of-type {
+    color: $social-last-color;
+  }
+
+  > li > a {
+    color: inherit;
+    @include applyLinkHoverOpacity();
+  }
+
+  &__item {
+    width: 17px;
+    height: 17px;
+
+    @media (min-width: $screen-l) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.copyright {
+  grid-area: copyright;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &_short {
+    @include setFont(
+      $color: $footer-links-color,
+      $fs: $fs-12,
+      $lh: $lh-18,
+      $fw: 500,
+      $ff: $font-inter
+    );
+    @include hideBelow($screen-m);
+
+    @media (min-width: $screen-l) {
+      @include setFont(
+        $fs: $fs-18,
+        $lh: $lh-26,
+      );
+    }
+  }
+
+  &_full {
+    width: 100%;
+    text-align: center;
+    @include setFont(
+      $color: $footer-links-color,
+      $fs: $fs-14,
+      $lh: $lh-16,
+      $fw: 500,
+      $ff: $font-inter
+    );
+    @include hideAbove($screen-m);
+  }
+}

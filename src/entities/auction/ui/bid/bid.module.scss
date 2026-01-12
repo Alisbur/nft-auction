@@ -1,0 +1,62 @@
+@use "@styles/" as *;
+
+.bid {
+  display: flex;
+  flex-direction: column;
+  row-gap: 7px;
+
+  & > p {
+    @include setFont(
+      $fs: $fs-11,
+      $lh: $lh-11,
+      $fw: 400,
+      $ff: $font-poppins,
+      $color: $bid-text-color
+    );
+  }
+
+  &_data {
+    display: flex;
+    align-items: center;
+
+    & > svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    & > span {
+      @include setFont(
+        $fs: $fs-12,
+        $lh: $lh-14,
+        $fw: 500,
+        $ff: $font-poppins,
+        $color: $primary-text-color
+      );
+    }
+  }
+
+  @media (min-width: $screen-l) {
+    row-gap: 3px;
+
+    & > p {
+      @include setFont($fs: $fs-14, $lh: $lh-14);
+    }
+
+    &_data {
+      & > svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      & > span {
+        @include setFont(
+          $fs: $fs-16,
+          $lh: $lh-22,
+          $fw: 500,
+          $ff: $font-poppins,
+          $color: $primary-text-color
+        );
+      }
+    }
+  }
+}

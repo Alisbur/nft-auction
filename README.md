@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NFT Auction
 
-## Getting Started
+## Описание проекта
+Проект представляет собой адаптивную страницу слайдера NFT аукционов, реализованную с использованием **Next.js** и **архитектуры FSD (Feature-Sliced Design)**. Данные для слайдера загружаются через публичный API CoinGecko, а поля «Дата окончания» и «Текущая ставка» генерируются на стороне клиента. Изображения карточек подставляются случайным образом из предоставленного набора.
 
-First, run the development server:
+**Демо и дизайн:**  
+Дизайн страницы выполнен в соответствии с макетом Figma: [Figma Design](https://www.figma.com/design/qj4RLCkXNzYKdajhCYIGrT/Frontend-test--UPD-?node-id=0-1&p=f&t=wWqL055o610DRAgL-0)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Технологии и стек
+- **Фреймворк:** Next.js 16  
+- **Архитектура:** FSD (Feature-Sliced Design)  
+- **Язык:** TypeScript  
+- **Состояние:** Redux Toolkit  
+- **Стилизация:** SCSS, TailwindCSS (для вспомогательных утилит)  
+- **Анимации:** Framer Motion  
+- **Слайдер:** Swiper  
+- **Асинхронные данные:** SWR, Axios  
+- **Дата и время:** Day.js  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Особенности реализации
+- Адаптивная вёрстка для Desktop, Tablet и Mobile  
+- Корректная работа с асинхронной загрузкой данных из публичного API  
+- Слайдер с центральным элементом и симметричными соседними элементами  
+- Карточки с случайными изображениями и сгенерированными полями «Дата окончания» и «Текущая ставка»  
+- Реализовано с использованием FSD для удобной масштабируемости и поддержки компонентов  
+- Предусмотрена возможность настройки и запуска через Docker
+- ESLint и Prettier настроены для поддержания единого стиля кода
 
-## Learn More
+*Внимание! Адрес для подключения API содержится в env.template. При установке переименовать файл в .env.local
+При создании образа Docker .env.local с адресом будет добавлен автоматически.*
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Запуск проекта локально
+1. Клонировать репозиторий:  
+    git clone https://github.com/Alisbur/nft-auction.git
+    cd nft-auction
+2. Установить зависимости:
+    npm install
+3. Добавить .env файл с URL API
+    переименовать env.template в .env.local
+4. Запустить в режиме разработки: 
+    npm run dev
+5. Для production сборки:
+    npm run build
+    npm start
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Запуск проекта в Docker
+1. Сборка образа:
+    docker build -t nft-auction .
+2. Запуск контейнера:
+    docker run -p 3000:3000 nft-auction
+3. Доступ к приложению:
+    http://localhost:3000
+    
+---
 
-## Deploy on Vercel
+# Структура репозитория
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **app/** или **pages/** — страницы Next.js + Стор Redux
+- **widgets/** — переиспользуемые виджеты
+- **entities/** — бизнес-логика и API-хуки  
+- **shared/** — общие UI-компоненты и утилиты  
+- **features/** — моки FSD-фич
+- **styles/** — глобальные и модульные SCSS стили  
+- **Dockerfile** — для сборки и запуска контейнера  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

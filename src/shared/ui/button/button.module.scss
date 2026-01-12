@@ -1,0 +1,121 @@
+@use "@styles/" as *;
+
+.button {
+  position: relative;
+  outline: none;
+  cursor: pointer;
+
+  &__content {
+    visibility: visible;
+
+    &_hidden {
+      visibility: hidden;
+    }
+  }
+
+  &__spinner {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+  }
+
+  &_dark {
+    color: $dark-button-text-color;
+    background-color: $dark-button-background-color;
+    border: 1px solid $dark-button-border-color;
+
+    &:hover {
+      background-color: $dark-button-hover-background-color;
+      color: $dark-button-hover-text-color;
+      border: 1px solid $dark-button-hover-border-color;
+    }
+  }
+
+  &_white {
+    color: $white-button-text-color;
+    background-color: $white-button-background-color;
+    border: 1px solid $white-button-border-color;
+
+    &:hover {
+      background-color: $white-button-hover-background-color;
+      border: 1px solid $white-button-hover-border-color;
+      color: $dark-button-hover-text-color;
+    }
+  }
+
+  &_header {
+    padding: 11px 16px;
+    border-radius: 11.5px;
+    @include setFont($fs: $fs-12, $lh: 17.25px, $fw: 600, $ff: $font-inter, $ls: 0);
+    text-transform: uppercase;
+
+    @media (min-width: $screen-l) {
+      @include setFont($fs: $fs-16, $lh: $lh-22);
+      border-radius: 16px;
+      padding: 16px 25px;
+    }
+  }
+
+  &_drawer {
+    width: 100%;
+    border-radius: 15px;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    display: grid;
+    place-content: center;
+    @include setFont($fs: $fs-20, $lh: $lh-26, $fw: 600, $ff: $font-inter, $ls: 0);
+    text-transform: uppercase;
+  }
+
+  &_regular {
+    padding: 15px;
+    border-radius: 10px;
+    @include setFont($fs: $fs-12, $lh: 1, $fw: 500, $ff: $font-inter, $ls: 0.01);
+    text-transform: uppercase;
+
+    @media (min-width: $screen-m) {
+      border-radius: 8px;
+    }
+
+    @media (min-width: $screen-l) {
+      padding: 20px 28px;
+      @include setFont($fs: $fs-16, $lh: $lh-16);
+      border-radius: 12px;
+    }
+  }
+
+  &_card {
+    padding: 11px 18px;
+    border-radius: 9px;
+    @include setFont($fs: $fs-11, $lh: 150%, $fw: 600, $ff: $font-inter, $ls: 0.1px);
+    text-transform: uppercase;
+
+    @media (min-width: $screen-l) {
+      @include setFont($fs: $fs-14, $lh: $lh-20);
+      border-radius: 12px;
+      padding: 14.5px 24.5px;
+    }
+  }
+
+  &_promo {
+    padding: 10px 15px;
+    border-radius: 9px;
+    @include setFont($fs: $fs-11, $lh: 130%, $fw: 600, $ff: $font-outfit, $ls: 1%);
+
+    @media (min-width: $screen-m) {
+      padding: 15px 18px;
+      @include setFont($fs: $fs-16, $lh: 130%);
+    }
+
+    @media (min-width: $screen-l) {
+      padding: 19px 22px;
+      border-radius: 12px;
+      @include setFont($fs: $fs-22, $lh: 130%);
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+}

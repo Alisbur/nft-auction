@@ -1,4 +1,4 @@
-## 🖼️ Проект 1: NFT Аукцион (Next.js + TypeScript + FSD)
+## 🖼️ NFT Аукцион (Next.js + TypeScript + FSD)
 
 [![GitHub repo size](https://img.shields.io/github/repo-size/Alisbur/nft-auction?style=flat-square&label=nft-auction)](https://github.com/Alisbur/nft-auction)
 [![TypeScript](https://img.shields.io/badge/TypeScript-58.5%25-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)

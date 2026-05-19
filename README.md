@@ -1,34 +1,37 @@
-# NFT Auction
+## 🖼️ Проект 1: NFT Аукцион (Next.js + TypeScript + FSD)
 
-## Описание проекта
-Проект представляет собой адаптивную страницу слайдера NFT аукционов, реализованную с использованием **Next.js** и **архитектуры FSD (Feature-Sliced Design)**. Данные для слайдера загружаются через публичный API CoinGecko, а поля «Дата окончания» и «Текущая ставка» генерируются на стороне клиента. Изображения карточек подставляются случайным образом из предоставленного набора.
+[![GitHub repo size](https://img.shields.io/github/repo-size/Alisbur/nft-auction?style=flat-square&label=nft-auction)](https://github.com/Alisbur/nft-auction)
+[![TypeScript](https://img.shields.io/badge/TypeScript-58.5%25-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-764ABC?style=flat-square&logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
+[![FSD](https://img.shields.io/badge/Architecture-Feature_Sliced-00C9A5?style=flat-square)](https://feature-sliced.design/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker)](https://www.docker.com/)
 
-**Демо и дизайн:**  
-Дизайн страницы выполнен в соответствии с макетом Figma: [Figma Design](https://www.figma.com/design/qj4RLCkXNzYKdajhCYIGrT/Frontend-test--UPD-?node-id=0-1&p=f&t=wWqL055o610DRAgL-0)
+> Адаптивная страница слайдера NFT аукционов, демонстрирующая современные практики разработки на Next.js и архитектуру FSD. Проект полностью готов к запуску как локально, так и в Docker-контейнере.
 
----
+### ✨ Ключевые особенности
 
-## Технологии и стек
-- **Фреймворк:** Next.js 16  
-- **Архитектура:** FSD (Feature-Sliced Design)  
-- **Язык:** TypeScript  
-- **Состояние:** Redux Toolkit  
-- **Стилизация:** SCSS, TailwindCSS (для вспомогательных утилит)  
-- **Анимации:** Framer Motion  
-- **Слайдер:** Swiper  
-- **Асинхронные данные:** SWR, Axios  
-- **Дата и время:** Day.js  
+- 🎨 **Адаптивный дизайн**, точно соответствующий макету в Figma
+- 🖼️ **Слайдер с центральным элементом** и симметричными соседними карточками (Swiper)
+- 🔄 **Асинхронная загрузка** данных из публичного API CoinGecko
+- 📊 **Генерация полей** «Дата окончания» и «Текущая ставка» на клиенте
+- 🐳 **Docker-поддержка** для простого развёртывания в любом окружении
+- 🧩 **Архитектура FSD** (Feature-Sliced Design) для масштабируемости
+- ⚡ **Полный набор инструментов**: ESLint, Prettier, Git hooks
 
----
+### 🛠️ Технологический стек
 
-## Особенности реализации
-- Адаптивная вёрстка для Desktop, Tablet и Mobile  
-- Корректная работа с асинхронной загрузкой данных из публичного API  
-- Слайдер с центральным элементом и симметричными соседними элементами  
-- Карточки с случайными изображениями и сгенерированными полями «Дата окончания» и «Текущая ставка»  
-- Реализовано с использованием FSD для удобной масштабируемости и поддержки компонентов  
-- Предусмотрена возможность настройки и запуска через Docker
-- ESLint и Prettier настроены для поддержания единого стиля кода
+- **Фреймворк:** Next.js 16
+- **Архитектура:** FSD (Feature-Sliced Design)
+- **Язык:** TypeScript
+- **Состояние:** Redux Toolkit
+- **Стилизация:** SCSS + TailwindCSS (утилиты)
+- **Анимации:** Framer Motion
+- **Слайдер:** Swiper
+- **Асинхронные данные:** SWR, Axios
+- **Дата и время:** Day.js
+
+### 🚀 Быстрый старт
 
 *Внимание! Адрес для подключения API содержится в env.template. При установке переименовать файл в .env.local
 При создании образа Docker .env.local с адресом будет добавлен автоматически.*
